@@ -1,4 +1,5 @@
-from app.base import BaseView
+from ojoqt import BaseView
+
 from app.res.ui.main import Ui_MainWindow
 
 

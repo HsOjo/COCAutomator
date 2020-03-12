@@ -1,11 +1,13 @@
 import os
 
+from dt_automator import DTAutomator
+from dt_automator.sdk.model import SceneModel
+from ojoqt import BaseApplication, BaseMainWindow
+from ojoqt.dialog import SelectDialog
+from ojoqt.helper import TableHelper
 from pyadb import Device, PyADB
 from pyojo.tools.shell import get_app_shell
 
-from app import BaseApplication
-from app.base import BaseMainWindow
-from app.base.dialog import SelectDialog
 from app.config import Config
 from app.main.view import MainWindowView
 
@@ -20,8 +22,21 @@ class MainWindow(BaseMainWindow, MainWindowView):
 
         app_shell = get_app_shell()
         self._adb = PyADB('%s/app/res/libs/adb' % app_shell.get_runtime_dir())
+        self._dta = DTAutomator()
+        self._dta.load('app/res/data.dat')
         if self._config.load():
             self._device = self._adb.devices.get(self._config.device)
+            self._dta.set_device(self._device)
+
+    def sync_scenes(self):
+        if self._device is not None:
+            scenes = self._project.scenes
+            data = []
+            for k, v in scenes.items():
+                v: SceneModel
+                data.append([k, len(v.accuracy)])
+            TableHelper.sync_data(self.tableWidgetScenes, data)
+            TableHelper.auto_inject_columns_width(self.tableWidgetScenes)
 
     def _callback_select_device_triggered(self, b: bool):
         devices = self._adb.devices
@@ -39,5 +54,6 @@ class MainWindow(BaseMainWindow, MainWindowView):
 
         if item is not None:
             self._device = devices[item['sn']]
+            self._dta.set_device(self._device)
             self._config.device = item['sn']
             self._config.save()
