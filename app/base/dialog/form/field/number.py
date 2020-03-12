@@ -14,5 +14,8 @@ class NumberField(StringField):
         if value.isdigit():
             return int(value)
         else:
-            value = float(value) if value.replace('.', '', count=1).isdigit() else 0
+            v = value
+            v = v[1:] if v[0:1] == '-' else v
+            v = v.replace('.', '', 1) if v.count('.') == 1 else v
+            value = float(value) if v.isdigit() else 0
         return value
