@@ -20,6 +20,8 @@ class MainWindow(BaseMainWindow, MainWindowView):
 
         app_shell = get_app_shell()
         self._adb = PyADB('%s/app/res/libs/adb' % app_shell.get_runtime_dir())
+        if self._config.load():
+            self._device = self._adb.devices.get(self._config.device)
 
     def _callback_select_device_triggered(self, b: bool):
         devices = self._adb.devices

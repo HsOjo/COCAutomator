@@ -261,5 +261,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-test.py
-app/res/data
+test
