@@ -1,4 +1,6 @@
 class Const:
-    app_intents = {
+    app_name = 'COCAutomatorMaker'
+
+    dta_app_intents = {
         'Tencent': ''
     }
