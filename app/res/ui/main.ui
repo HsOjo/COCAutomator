@@ -1,241 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>960</width>
-                <height>600</height>
-            </rect>
-        </property>
-        <property name="windowTitle">
-            <string>COCAutomator</string>
-        </property>
-        <widget class="QWidget" name="centralwidget">
-            <layout class="QGridLayout" name="gridLayout">
-                <item row="0" column="0">
-                    <widget class="QGroupBox" name="groupBox">
-                        <property name="title">
-                            <string>Scenes</string>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout_2">
-                            <property name="leftMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="topMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="rightMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="bottomMargin">
-                                <number>8</number>
-                            </property>
-                            <item row="0" column="1">
-                                <widget class="QTableWidget" name="tableWidgetScenes">
-                                    <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                            <horstretch>0</horstretch>
-                                            <verstretch>0</verstretch>
-                                        </sizepolicy>
-                                    </property>
-                                    <property name="editTriggers">
-                                        <set>QAbstractItemView::NoEditTriggers</set>
-                                    </property>
-                                    <property name="selectionMode">
-                                        <enum>QAbstractItemView::SingleSelection</enum>
-                                    </property>
-                                    <property name="selectionBehavior">
-                                        <enum>QAbstractItemView::SelectRows</enum>
-                                    </property>
-                                    <attribute name="horizontalHeaderDefaultSectionSize">
-                                        <number>72</number>
-                                    </attribute>
-                                    <column>
-                                        <property name="text">
-                                            <string>name</string>
-                                        </property>
-                                    </column>
-                                    <column>
-                                        <property name="text">
-                                            <string>accuracy</string>
-                                        </property>
-                                    </column>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
-                <item row="0" column="1">
-                    <widget class="QGroupBox" name="groupBoxPreview">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="title">
-                            <string>Preview</string>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout_3">
-                            <property name="leftMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="topMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="rightMargin">
-                                <number>8</number>
-                            </property>
-                            <property name="bottomMargin">
-                                <number>8</number>
-                            </property>
-                            <item row="0" column="0">
-                                <widget class="QScrollArea" name="scrollArea">
-                                    <property name="widgetResizable">
-                                        <bool>true</bool>
-                                    </property>
-                                    <widget class="QWidget" name="scrollAreaWidgetContents">
-                                        <property name="geometry">
-                                            <rect>
-                                                <x>0</x>
-                                                <y>0</y>
-                                                <width>591</width>
-                                                <height>497</height>
-                                            </rect>
-                                        </property>
-                                        <layout class="QGridLayout" name="gridLayout_Preview">
-                                            <property name="leftMargin">
-                                                <number>0</number>
-                                            </property>
-                                            <property name="topMargin">
-                                                <number>0</number>
-                                            </property>
-                                            <property name="rightMargin">
-                                                <number>0</number>
-                                            </property>
-                                            <property name="bottomMargin">
-                                                <number>0</number>
-                                            </property>
-                                        </layout>
-                                    </widget>
-                                </widget>
-                            </item>
-                            <item row="0" column="1">
-                                <widget class="QSlider" name="horizontalSliderScale">
-                                    <property name="toolTip">
-                                        <string>Scale</string>
-                                    </property>
-                                    <property name="minimum">
-                                        <number>10</number>
-                                    </property>
-                                    <property name="maximum">
-                                        <number>100</number>
-                                    </property>
-                                    <property name="value">
-                                        <number>100</number>
-                                    </property>
-                                    <property name="orientation">
-                                        <enum>Qt::Vertical</enum>
-                                    </property>
-                                </widget>
-                            </item>
-                        </layout>
-                    </widget>
-                </item>
-            </layout>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>COCAutomator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Scenes</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <property name="leftMargin">
+        <number>8</number>
+       </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>8</number>
+       </property>
+       <property name="bottomMargin">
+        <number>8</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QTableWidget" name="tableWidgetScenes">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>72</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>name</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>accuracy</string>
+          </property>
+         </column>
         </widget>
-        <widget class="QMenuBar" name="menubar">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>960</width>
-                    <height>22</height>
-                </rect>
-            </property>
-            <widget class="QMenu" name="menuDevice">
-                <property name="title">
-                    <string>Device</string>
-                </property>
-                <addaction name="actionSelectDevice"/>
-                <addaction name="separator"/>
-                <addaction name="actionReboot"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBoxPreview">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Preview</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="leftMargin">
+        <number>8</number>
+       </property>
+       <property name="topMargin">
+        <number>8</number>
+       </property>
+       <property name="rightMargin">
+        <number>8</number>
+       </property>
+       <property name="bottomMargin">
+        <number>8</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>591</width>
+            <height>497</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_Preview">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelPreview">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
             </widget>
-            <widget class="QMenu" name="menuApplication">
-                <property name="title">
-                    <string>Application</string>
-                </property>
-                <addaction name="actionStart"/>
-                <addaction name="actionStop"/>
-                <addaction name="actionRestart"/>
-            </widget>
-            <widget class="QMenu" name="menuAutomator">
-                <property name="title">
-                    <string>Automator</string>
-                </property>
-                <addaction name="actionPlay"/>
-                <addaction name="actionPause"/>
-                <addaction name="separator"/>
-                <addaction name="actionGoToSelectScene"/>
-            </widget>
-            <addaction name="menuDevice"/>
-            <addaction name="menuApplication"/>
-            <addaction name="menuAutomator"/>
+           </item>
+          </layout>
+         </widget>
         </widget>
-        <widget class="QStatusBar" name="statusbar"/>
-        <action name="actionSelectDevice">
-            <property name="text">
-                <string>Select Device</string>
-            </property>
-            <property name="shortcut">
-                <string>Ctrl+D</string>
-            </property>
-        </action>
-        <action name="actionReboot">
-            <property name="text">
-                <string>Reboot</string>
-            </property>
-        </action>
-        <action name="actionStart">
-            <property name="text">
-                <string>Start</string>
-            </property>
-        </action>
-        <action name="actionStop">
-            <property name="text">
-                <string>Stop</string>
-            </property>
-        </action>
-        <action name="actionRestart">
-            <property name="text">
-                <string>Restart</string>
-            </property>
-            <property name="shortcut">
-                <string>Ctrl+R</string>
-            </property>
-        </action>
-        <action name="actionGoToSelectScene">
-            <property name="text">
-                <string>Go To Select Scene</string>
-            </property>
-            <property name="shortcut">
-                <string>Ctrl+G</string>
-            </property>
-        </action>
-        <action name="actionPlay">
-            <property name="text">
-                <string>Play</string>
-            </property>
-        </action>
-        <action name="actionPause">
-            <property name="text">
-                <string>Pause</string>
-            </property>
-        </action>
-    </widget>
-    <resources/>
-    <connections/>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSlider" name="verticalSliderScale">
+         <property name="toolTip">
+          <string>Scale</string>
+         </property>
+         <property name="minimum">
+          <number>10</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDevice">
+    <property name="title">
+     <string>Device</string>
+    </property>
+    <addaction name="actionSelectDevice"/>
+   </widget>
+   <widget class="QMenu" name="menuApplication">
+    <property name="title">
+     <string>Application</string>
+    </property>
+    <addaction name="actionRun"/>
+    <addaction name="actionKill"/>
+    <addaction name="actionRestart"/>
+   </widget>
+   <widget class="QMenu" name="menuAutomator">
+    <property name="title">
+     <string>Automator</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionStop"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
+   </widget>
+   <addaction name="menuDevice"/>
+   <addaction name="menuApplication"/>
+   <addaction name="menuAutomator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSelectDevice">
+   <property name="text">
+    <string>Select Device</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionRun">
+   <property name="text">
+    <string>Run</string>
+   </property>
+   <property name="shortcut">
+    <string>Meta+R</string>
+   </property>
+  </action>
+  <action name="actionKill">
+   <property name="text">
+    <string>Kill</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F2</string>
+   </property>
+  </action>
+  <action name="actionRestart">
+   <property name="text">
+    <string>Restart</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="text">
+    <string>Play</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+,</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
 </ui>
