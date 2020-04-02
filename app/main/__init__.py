@@ -1,5 +1,6 @@
 import os
 
+from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtGui import QPixmap
 from dt_automator.sdk.model import SceneModel
 from ojoqt import BaseApplication, BaseMainWindow, try_exec
@@ -17,6 +18,9 @@ from app.res import Const
 
 
 class MainWindow(BaseMainWindow, MainWindowView):
+    signal_set_preview = pyqtSignal(bytes)
+    signal_refresh_scene = pyqtSignal(list)
+
     def __init__(self, app: BaseApplication):
         self._config = Config()
         self._config._config_path = os.path.expanduser('~/.coc_automator.json')
@@ -24,8 +28,8 @@ class MainWindow(BaseMainWindow, MainWindowView):
 
         self._event = dict(
             config=lambda: self._config,
-            set_preview=self.set_preview,
-            refresh_scenes=self.refresh_scenes,
+            set_preview=lambda: self.signal_set_preview,
+            refresh_scenes=lambda: self.signal_refresh_scene,
         )
 
         super().__init__(app)
@@ -34,6 +38,9 @@ class MainWindow(BaseMainWindow, MainWindowView):
         self._adb = PyADB('%s/app/res/libs/adb' % app_shell.get_runtime_dir())
         self._automator = COCAutomator(self._event)
         self._automator.load('app/res/data.dat')
+
+        self.signal_set_preview.connect(self.set_preview)
+        self.signal_refresh_scene.connect(self.refresh_scenes)
 
         if self._config.load():
             devices = self._adb.devices

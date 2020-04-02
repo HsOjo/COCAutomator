@@ -29,10 +29,10 @@ class COCAutomator(DTAutomator):
         device.app.force_stop(package)
 
     def callback_screen_update(self, img_data: bytes):
-        self._event['set_preview'](img_data)
+        self._event['set_preview']().emit(img_data)
 
     def callback_scenes_update(self, most_acc_scene):
         data = []
         for scene in self.scenes():
             data.append([scene.name, scene.accuracy])
-        self._event['refresh_scenes'](data)
+        self._event['refresh_scenes']().emit(data)
